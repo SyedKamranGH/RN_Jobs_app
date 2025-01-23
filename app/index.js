@@ -14,7 +14,6 @@ import {
 const Home = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
-      {/* <Text>Hello React Native Home page</Text> */}
       <Stack.Screen
         options={{
           headerStyle: { backgroundColor: COLORS.lightWhite },

@@ -9,12 +9,9 @@ const useFetch = (endpoint, query) => {
 
   const options = {
     method: "GET",
-    url: "https://jsearch.p.rapidapi.com/company-job-salary",
+    url: `https://jsearch.p.rapidapi.com/${endpoint}`,
     params: {
-      company: "Amazon",
-      job_title: "software developer",
-      location_type: "ANY",
-      years_of_experience: "ALL",
+      ...query,
     },
     headers: {
       "x-rapidapi-key": "f03c4b7dbemshd609389dbfb7453p194b1cjsn0310b15e7187",

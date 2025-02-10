@@ -1,13 +1,5 @@
-import React, { useEffect, useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  ActivityIndicator,
-  Image,
-} from "react-native";
-// import { checkImageURL } from "../../../../utils";
+import React from "react";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import styles from "./popularjobcard.style";
 
 const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
@@ -19,7 +11,6 @@ const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
       style={styles.container(selectedJob, item)}
       onPress={() => handleCardPress(item)}
     >
-      {/* {console.log("item ----> ", !item?.employer_logo, item?.employer_logo)} */}
       <TouchableOpacity style={styles.logoContainer(selectedJob, item)}>
         <Image
           source={{

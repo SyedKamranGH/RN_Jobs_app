@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -6,14 +6,14 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
-} from "react-native";
-import { useRouter } from "expo-router";
-import styles from "./welcome.style";
-import { icons, SIZES } from "../../../constants";
+} from 'react-native';
+import { useRouter } from 'expo-router';
+import styles from './welcome.style';
+import { icons, SIZES } from '../../../constants';
 
-const jobTypes = ["Full-time", "Part-time", "Contractor", "Remote", "Hybrid"];
+const jobTypes = ['Full-time', 'Part-time', 'Contractor', 'Remote', 'Hybrid'];
 const Welcome = () => {
-  const [activeJobType, setActiveJobType] = useState("Full-time");
+  const [activeJobType, setActiveJobType] = useState('Full-time');
 
   const router = useRouter();
   return (

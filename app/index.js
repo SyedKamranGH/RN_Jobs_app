@@ -1,15 +1,15 @@
-import { View, Text, ScrollView, SafeAreaView } from "react-native";
-import { useState } from "react";
-import { Stack, useRouter } from "expo-router";
+import { View, Text, ScrollView, SafeAreaView } from 'react-native';
+import { useState } from 'react';
+import { Stack, useRouter } from 'expo-router';
 
-import { COLORS, SIZES, icons, images } from "../constants";
+import { COLORS, SIZES, icons, images } from '../constants';
 
 import {
   Nearbyjobs,
   Popularjobs,
   ScreenHeaderBtn,
   Welcome,
-} from "../components";
+} from '../components';
 
 const Home = () => {
   return (
@@ -24,7 +24,7 @@ const Home = () => {
           headerRight: () => (
             <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />
           ),
-          headerTitle: "",
+          headerTitle: '',
         }}
       />
       <ScrollView showsVerticalScrollIndicator={false}>

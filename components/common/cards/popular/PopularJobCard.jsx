@@ -1,10 +1,10 @@
-import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
-import styles from "./popularjobcard.style";
+import React from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import styles from './popularjobcard.style';
 
 const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
   const dummyImageUrl =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP2YDRyiv2-xSlBBMkU-EBSr2C5VBliRwxsQ&s";
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP2YDRyiv2-xSlBBMkU-EBSr2C5VBliRwxsQ&s';
 
   return (
     <TouchableOpacity

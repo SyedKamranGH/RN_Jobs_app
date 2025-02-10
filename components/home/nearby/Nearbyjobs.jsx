@@ -1,17 +1,17 @@
-import React from "react";
-import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
-import { useRouter } from "expo-router";
+import React from 'react';
+import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { useRouter } from 'expo-router';
 
-import { COLORS } from "../../../constants";
-import useFetch from "../../../hook/useFetch";
-import styles from "./nearbyjobs.style";
-import NearbyJobCard from "../../common/cards/nearby/NearbyJobCard";
+import { COLORS } from '../../../constants';
+import useFetch from '../../../hook/useFetch';
+import styles from './nearbyjobs.style';
+import NearbyJobCard from '../../common/cards/nearby/NearbyJobCard';
 
 const Nearbyjobs = () => {
   const router = useRouter();
 
-  const { data, isLoading, error } = useFetch("search", {
-    query: "React Developer",
+  const { data, isLoading, error } = useFetch('search', {
+    query: 'React Developer',
     num_pages: 1,
   });
 

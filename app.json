@@ -1,9 +1,7 @@
 {
   "expo": {
     "scheme": "acme",
-    "plugins": [
-      "expo-router"
-    ],
+    "plugins": ["expo-router"],
     "name": "RN_Jobs_app",
     "slug": "RN_Jobs_app"
   }

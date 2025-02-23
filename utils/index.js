@@ -1,10 +1,10 @@
 export const checkImageURL = (url) => {
   if (!url) return false;
-  else {
-    const pattern = new RegExp(
-      '^https?:\\/\\/.+\\.(pngjpgjpeg\bmpgifwebp)$',
-      'i'
-    );
-    return pattern.test(url);
-  }
+
+  const pattern = new RegExp(
+    '^https?:\\/\\/.*(\\.(png|jpg|jpeg|bmp|gif|webp)(\\?.*)?$|\\b(images|img|photo|media)\\b|[?&]q=tbn:)',
+    'i'
+  );
+
+  return pattern.test(url);
 };

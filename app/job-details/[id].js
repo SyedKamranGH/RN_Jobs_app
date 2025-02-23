@@ -13,15 +13,19 @@ import Company from '../../components/jobdetails/company/Company';
 import { COLORS, icons, SIZES } from '../../constants';
 import useFetch from '../../hook/useFetch';
 import ScreenHeaderBtn from '../../components/common/header/ScreenHeaderBtn';
+import { JobTabs } from '../../components';
 
 const JobDetails = () => {
   const params = useLocalSearchParams();
   const router = useRouter();
 
+  const [refreshing, setRefreshing] = useState(false);
+
   const { data, isLoading, error, refresh } = useFetch('job-details', {
     job_id: params?.id,
   });
-  //   console.log('params -----> ', params?.id, data);
+
+  const onRefresh = () => {};
 
   return (
     <SafeAreaView
@@ -51,7 +55,31 @@ const JobDetails = () => {
           ),
           headerTitle: '',
         }}
-      ></Stack.Screen>
+      />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
+        {isLoading ? (
+          <ActivityIndicator size="large" color={COLORS.primary} />
+        ) : error ? (
+          <Text>Something went wrong</Text>
+        ) : data.length === 0 ? (
+          <Text>No data found</Text>
+        ) : (
+          <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
+            <Company
+              companyLogo={data[0].employer_logo}
+              jobTitle={data[0].job_title}
+              companyName={data[0].employer_name}
+              location={data[0].job_country}
+            />
+            <JobTabs />
+          </View>
+        )}
+      </ScrollView>
     </SafeAreaView>
   );
 };

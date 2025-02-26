@@ -4,11 +4,9 @@ import { View, Text, Image } from 'react-native';
 import styles from './company.style';
 import { icons } from '../../../constants';
 import { checkImageURL } from '../../../utils/index';
+import { dummyImageUrl } from '../../../constants/dummyUrl';
 
 const Company = ({ companyLogo, jobTitle, companyName, location }) => {
-  const dummyImageUrl =
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP2YDRyiv2-xSlBBMkU-EBSr2C5VBliRwxsQ&s';
-
   return (
     <View style={styles.container}>
       <View style={styles.logoBox}>
@@ -18,6 +16,9 @@ const Company = ({ companyLogo, jobTitle, companyName, location }) => {
           }}
           style={styles.logoImage}
         />
+      </View>
+      <View>
+        <Text style={styles.jobTitle}>{jobTitle}</Text>
       </View>
     </View>
   );

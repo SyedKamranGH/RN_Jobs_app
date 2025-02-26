@@ -2,17 +2,18 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 
 import styles from './nearbyjobcard.style';
+import { dummyImageUrl } from '../../../../constants/dummyUrl';
+import { checkImageURL } from '../../../../utils';
 
 const NearbyJobCard = ({ job, handleNavigate }) => {
-  const dummyImageUrl =
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP2YDRyiv2-xSlBBMkU-EBSr2C5VBliRwxsQ&s';
-
   return (
     <TouchableOpacity style={styles.container} onPress={() => handleNavigate}>
       <TouchableOpacity style={styles.logoContainer}>
         <Image
           source={{
-            uri: !job?.employer_logo ? dummyImageUrl : job?.employer_logo,
+            uri: checkImageURL(job.employer_logo)
+              ? job.employer_logo
+              : dummyImageUrl,
           }}
           resizeMode="contain"
           style={styles.logoImage}

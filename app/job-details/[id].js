@@ -15,11 +15,14 @@ import useFetch from '../../hook/useFetch';
 import ScreenHeaderBtn from '../../components/common/header/ScreenHeaderBtn';
 import { JobTabs } from '../../components';
 
+const tabs = ['About', 'Qualifications', 'responsibilities'];
+
 const JobDetails = () => {
   const params = useLocalSearchParams();
   const router = useRouter();
 
   const [refreshing, setRefreshing] = useState(false);
+  const [activeTab, setActiveTab] = useState(tabs[0]);
 
   const { data, isLoading, error, refresh } = useFetch('job-details', {
     job_id: params?.id,
@@ -76,7 +79,11 @@ const JobDetails = () => {
               companyName={data[0].employer_name}
               location={data[0].job_country}
             />
-            <JobTabs />
+            <JobTabs
+              tabs={tabs}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
           </View>
         )}
       </ScrollView>
